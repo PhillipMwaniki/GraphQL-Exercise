@@ -4,6 +4,7 @@
   "description": "Learning how to use graphql",
   "main": "server.js",
   "scripts": {
+    "dev:server": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Phillip Mwaniki",
@@ -11,6 +12,7 @@
   "dependencies": {
     "express": "^4.15.3",
     "express-graphql": "^0.6.7",
+    "graphql": "^0.10.5",
     "nodemon": "^1.11.0"
   }
 }
