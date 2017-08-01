@@ -1,3 +1,4 @@
+const axios = require('axios');
 const {
     GraphQLObjectType,
     GraphQLString,
@@ -8,11 +9,11 @@ const {
 } = require('graphql');
 
 //Hardcoded data
-const customers = [
-    { id: '1', name: 'John Doe', email: 'john@doe.com', age: 34 },
-    { id: '2', name: 'Black Beard', email: 'black@doe.com', age: 67 },
-    { id: '3', name: 'Don Eppes', email: 'don@doe.com', age: 23 }
-];
+// const customers = [
+//     { id: '1', name: 'John Doe', email: 'john@doe.com', age: 34 },
+//     { id: '2', name: 'Black Beard', email: 'black@doe.com', age: 67 },
+//     { id: '3', name: 'Don Eppes', email: 'don@doe.com', age: 23 }
+// ];
 //Customer type
 const CustomerType = new GraphQLObjectType({
     name: 'Customer',
@@ -34,11 +35,13 @@ const RootQuery = new GraphQLObjectType({
                 id: { type: GraphQLString },
             },
             resolve(parentValue, args) {
-                for (let i = 0; i < customers.length; i++) {
-                    if (customers[i].id == args.id) {
-                        return customers[i];
-                    }
-                }
+                // for (let i = 0; i < customers.length; i++) {
+                //     if (customers[i].id == args.id) {
+                //         return customers[i];
+                //     }
+                // }
+
+                
             }
         },
         customers: {
